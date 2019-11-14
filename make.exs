@@ -87,6 +87,8 @@ defmodule Make do
                                 [{"wxk" <> rest, "WXK" <> rest} | defines]
                               "WX" <> rest ->
                                 [{"wx" <> rest, "WX" <> rest} | defines]
+                              "'WX" <> rest ->
+                                [{"wx" <> String.trim_trailing(rest, "'"), "WX" <> String.trim_trailing(rest, "'")} | defines]
                               rest ->
                                 [{rest, rest} | defines]
                             end
